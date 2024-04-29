@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/29 11:23:59 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/04/29 11:32:43 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/04/29 14:00:13 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ public:
     ScavTrap();
     ScavTrap(std::string name);
     ~ScavTrap();
+    void attack(const std::string& target);
     void guardGate();
 };
 

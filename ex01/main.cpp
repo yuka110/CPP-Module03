@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/29 10:30:02 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/04/29 11:41:44 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/04/29 14:15:01 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,18 @@ int main()
     ClapTrap May("May");
     ScavTrap June("June");
 
-
-    April.attack("May");
+    std::cout << "------------------------" << std::endl;
+    April.attack(May.get_name());
     May.takeDamage(April.get_attack_pt());
-    May.attack("April");
+    May.attack(April.get_name());
     April.takeDamage(May.get_attack_pt());
     April.beRepaired(10);
     
-    June.attack("April");
+    std::cout << "------------------------" << std::endl;
+    June.attack(April.get_name());
     April.takeDamage(June.get_attack_pt());
-    May.attack("June");
+    April.attack(June.get_name());
+    May.attack(June.get_name());
     June.takeDamage(May.get_attack_pt());
     June.guardGate();
     June.beRepaired(10);

@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   ScavTrap.hpp                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2024/04/29 10:30:02 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/04/29 13:48:58 by yitoh         ########   odam.nl         */
+/*   Created: 2024/04/29 11:23:59 by yitoh         #+#    #+#                 */
+/*   Updated: 2024/04/29 14:19:05 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int main()
+class ScavTrap : public ClapTrap
 {
-    ClapTrap April("April");
-    ClapTrap May("May");
+public:
+    ScavTrap();
+    ScavTrap(std::string name);
+    ~ScavTrap();
+    void attack(const std::string& target);
+    void guardGate();
+};
 
-    April.attack(May.get_name());
-    May.takeDamage(April.get_attack_pt());
-    May.attack(April.get_name());
-    April.takeDamage(May.get_attack_pt());
-    April.beRepaired(10);
-    return 0;
-}
+#endif

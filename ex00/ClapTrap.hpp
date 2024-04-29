@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/29 10:30:18 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/04/29 11:17:09 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/04/29 13:47:44 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ public:
     ClapTrap(std::string name);
     ~ClapTrap();
     int get_attack_pt();
+    std::string get_name();
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);

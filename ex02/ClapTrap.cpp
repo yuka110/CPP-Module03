@@ -6,13 +6,14 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/29 10:30:07 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/04/29 14:20:05 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/04/29 14:20:12 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(){ 
+    std::cout << "ClapTrap is constructed" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
