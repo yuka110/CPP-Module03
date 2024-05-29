@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/29 12:26:11 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/04/29 14:04:45 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/05/29 16:20:29 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ public:
     FragTrap();
     FragTrap(std::string name);
     ~FragTrap();
+    FragTrap(FragTrap& F);
+    FragTrap& operator=(FragTrap& F);
     void attack(const std::string& target);
     void highFivesGuys();
 };
