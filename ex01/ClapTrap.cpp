@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/29 10:30:07 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/04/29 14:20:08 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/05/29 16:41:00 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,30 @@ ClapTrap::ClapTrap(std::string name)
 ClapTrap::~ClapTrap()
 {
     std::cout << "ClapTrap " << _name << " is destructed" << std::endl;
+}
+
+ClapTrap::ClapTrap(ClapTrap& C){
+    std::cout << "ClapTrap Copy constructor is called" << std::endl;
+    operator=(C);
+}
+
+ClapTrap& ClapTrap::operator=(ClapTrap& C){
+    if (this == &C)
+        return (*this);
+    std::cout << "ClapTrap Copy assignment operator called" << std::endl;
+    _name = C.get_name();
+    _hit_pt = C.get_hit_pt();
+    _energy_pt = C.get_energy_pt();
+    _attack_pt = C.get_attack_pt();
+    return (*this);
+}
+
+int ClapTrap::get_hit_pt(){
+    return(_hit_pt);
+}
+
+int ClapTrap::get_energy_pt(){
+    return(_energy_pt);
 }
 
 int ClapTrap::get_attack_pt()

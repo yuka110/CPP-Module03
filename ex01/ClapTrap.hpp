@@ -6,7 +6,7 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/29 10:30:18 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/04/29 13:50:27 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/05/29 16:17:16 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ public:
     ClapTrap();
     ClapTrap(std::string name);
     ~ClapTrap();
+    ClapTrap(ClapTrap& C);
+    ClapTrap& operator=(ClapTrap& C);
+    
+    int get_hit_pt();
+    int get_energy_pt();
     int get_attack_pt();
     std::string get_name();
     void attack(const std::string& target);

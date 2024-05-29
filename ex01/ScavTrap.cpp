@@ -6,15 +6,13 @@
 /*   By: yitoh <yitoh@student.codam.nl>               +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/04/29 11:23:44 by yitoh         #+#    #+#                 */
-/*   Updated: 2024/04/29 14:21:59 by yitoh         ########   odam.nl         */
+/*   Updated: 2024/05/29 16:41:09 by yitoh         ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(){
-    
-}
+ScavTrap::ScavTrap(){}
 
 ScavTrap::ScavTrap(std::string name)
 {
@@ -28,6 +26,23 @@ ScavTrap::ScavTrap(std::string name)
 
 ScavTrap::~ScavTrap(){
     std::cout << "ScavTrap " << _name << " is destructed" << std::endl;
+}
+
+ScavTrap::ScavTrap(ScavTrap& S) : ClapTrap(S)
+{
+    std::cout << "ScavTrap Copy constructor is called" << std::endl;
+    operator=(S);
+}
+
+ScavTrap& ScavTrap::operator=(ScavTrap& S){
+    if (this == &S)
+        return (*this);
+    std::cout << "ScavTrap Copy assignment operator called" << std::endl;
+    _name = S.get_name();
+    _hit_pt = S.get_hit_pt();
+    _energy_pt = S.get_energy_pt();
+    _attack_pt = S.get_attack_pt();
+    return (*this);
 }
 
 void ScavTrap::attack(const std::string& target){
